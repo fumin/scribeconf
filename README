@@ -1,0 +1,24 @@
+PACKAGE DOCUMENTATION
+
+package scribeconf
+    import "."
+
+    Package scribeconf provides utilities for parsing Scribe configuration
+    files. For details of Scribe configuration, please refer to
+    https://github.com/facebookarchive/scribe/wiki/Scribe-Configuration
+
+TYPES
+
+type Store struct {
+    Name   string            // Store name denoted by surrounding '<' and '>'
+    Fields map[string]string // fields of a store, for example "category"
+    Stores []Store           // a list of sub-stores
+}
+    Store represents a scribe store. A store has multiple fields, and can
+    contain multiple sub-stores.
+
+func Parse(input string) (*Store, error)
+    Parse parses a Scribe configuration string as a top level store, with
+    possibly multiple sub-stores.
+
+
