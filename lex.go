@@ -204,7 +204,7 @@ func lexEqual(l *lexer) stateFn {
 		}
 	}
 	if eqNum != 1 {
-		return l.errorf("error equal symbol occurance: %d", eqNum)
+		return l.errorf("error equal symbol occurrence: %d", eqNum)
 	}
 
 	l.emit(itemEqual)
@@ -214,7 +214,7 @@ func lexEqual(l *lexer) stateFn {
 func lexVal(l *lexer) stateFn {
 	for {
 		r := l.next()
-		if isSpace(r) || isEndOfLine(r) || r == eof {
+		if isEndOfLine(r) || r == eof {
 			break
 		}
 	}
