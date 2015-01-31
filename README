@@ -21,4 +21,7 @@ func Parse(input string) (*Store, error)
     Parse parses a Scribe configuration string as a top level store, with
     possibly multiple sub-stores.
 
+-----
 
+Contributors:
+* https://github.com/milanbrahmbhatt
